@@ -10,9 +10,16 @@ public class PastDate {
 	
 	private GregorianCalendar myDate = new GregorianCalendar();
 	
+	public PastDate(){
+		
+	}
 	public PastDate (int year, int month, int date){
 		
 		this.myDate.set(year, month, date);
+	}
+	
+	public void setDate(Date newDate){
+		myDate.setTime(newDate);
 	}
 	
 	public String dayOfTheWeek(){
@@ -47,7 +54,7 @@ public class PastDate {
 		Date tempDate = this.myDate.getTime();
 		long startDateMS = tempDate.getTime();
 		
-		long elapsedMS = startDateMS - endDateMS;
+		long elapsedMS = endDateMS - startDateMS ;
 		long elapsedDays = elapsedMS / (24 * 60 * 60 * 1000);
 
 		
